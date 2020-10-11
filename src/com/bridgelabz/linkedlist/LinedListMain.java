@@ -11,15 +11,18 @@ public class LinedListMain {
 		// To append elements
 		myLinkedList.append(56);
 		myLinkedList.append(30);
+		myLinkedList.append(40);
 		myLinkedList.append(70);
 
 		//Linked list
 		myLinkedList.printLinkedList();
+		System.out.println("Size before deletion is "+myLinkedList.getLength());
 
-		//To insert 40 after 30
-		myLinkedList.insertAfterKey(30, 40);
+		//To delete 40 when key 30 is given
+		myLinkedList.deleteKey(40);
 		System.out.println();
-		System.out.println("After insertion");
+		System.out.println("Size after deletion is "+myLinkedList.getLength());
+		System.out.println("After deletion");
 		myLinkedList.printLinkedList();
 		
 		

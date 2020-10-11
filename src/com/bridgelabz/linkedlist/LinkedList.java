@@ -40,7 +40,7 @@ public class LinkedList<K> {
 		}
 	}
 
-	// Method to insert element at the givin index
+	// Method to insert element at the given index
 	public void insert(int index, K key) {
 		if (index == 0) {
 			addFirst(key);
@@ -91,6 +91,26 @@ public class LinkedList<K> {
 
 	}
 
+	// Method to delete when index is given
+	public K delete(int index) {
+		K element=null;
+		if(index==0)
+			element = pop();
+		else if(index==getLength())
+			element = popLast();
+		else {
+			Node<K> tempNode = head;
+			for (int i = 0; i <= index - 2; i++) {
+				tempNode = tempNode.getNext();
+			}
+			element = tempNode.getKey();
+			Node<K> node = tempNode.getNext();
+			tempNode.setNext(node.getNext());
+		}
+		return element;
+
+	}
+
 	// Method to search linked list with given key
 	public int search(K key) {
 		int index = 0;
@@ -104,9 +124,16 @@ public class LinkedList<K> {
 		return index;
 	}
 
-	// Method to add element after a given key
+	// Method to insert element after a given key
 	public void insertAfterKey(K key1, K key2) {
-		insert(search(key1)+1, key2);
+		insert(search(key1) + 1, key2);
+	}
+
+	// Method to delete element after a given key
+	public K deleteKey(K key) {
+		int index = search(key);
+		K element = delete(index);
+		return element;
 	}
 
 	// Method to print linked list
