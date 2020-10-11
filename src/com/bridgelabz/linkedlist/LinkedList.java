@@ -25,6 +25,21 @@ public class LinkedList<K> {
 		}
 	}
 
+	// Method to append linked list
+	public void append(K key) {
+		Node<K> newNode = new Node<K>(key);
+		if (tail == null) {
+			tail = newNode;
+		}
+		if (head == null) {
+			head = newNode;
+		} else {
+			Node<K> tempNode = tail;
+			tempNode.setNext(newNode);
+			tail = newNode;
+		}
+	}
+
 	// Method to print linked list
 	public void printLinkedList() {
 		System.out.println("Linked List");
