@@ -15,7 +15,13 @@ public class LinedListMain {
 		// To insert between 56 and 70
 		myLinkedList.insert(1, 30);
 
-		// To print the linked list
+		// Linked list before deletion
+		myLinkedList.printLinkedList();
+		System.out.println();
+		
+		System.out.println(myLinkedList.pop()+" deleted");
+		
+		//Linked list after deletion
 		myLinkedList.printLinkedList();
 
 	}

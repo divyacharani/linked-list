@@ -70,6 +70,13 @@ public class LinkedList<K> {
 		return length + 1;
 	}
 
+	// Method to delete first element
+	public K pop() {
+		Node<K> tempNode = head;
+		head = head.getNext();
+		return tempNode.getKey();
+	}
+
 	// Method to print linked list
 	public void printLinkedList() {
 		System.out.println("Linked List");
