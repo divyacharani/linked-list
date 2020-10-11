@@ -91,6 +91,18 @@ public class LinkedList<K> {
 
 	}
 
+	//Method to search linked list with given key
+	public int search(K key) {
+		int index = 0;
+		Node<K> tempNode = head;
+		while(tempNode.getNext()!=null) {
+			if(tempNode.getKey().equals(key))
+				break;
+			tempNode = tempNode.getNext();
+			index++;
+		}
+		return index;
+	}
 	// Method to print linked list
 	public void printLinkedList() {
 		System.out.println("Linked List");
