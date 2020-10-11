@@ -79,30 +79,36 @@ public class LinkedList<K> {
 
 	// Method to delete last element
 	public K popLast() {
-		K element=null;
+		K element = null;
 		Node<K> tempNode = head;
-		while (tempNode.getNext().getNext()!=null) {
+		while (tempNode.getNext().getNext() != null) {
 			tempNode = tempNode.getNext();
 			element = tempNode.getNext().getKey();
 		}
-		tail = tempNode;		
+		tail = tempNode;
 		tempNode.setNext(null);
 		return element;
 
 	}
 
-	//Method to search linked list with given key
+	// Method to search linked list with given key
 	public int search(K key) {
 		int index = 0;
 		Node<K> tempNode = head;
-		while(tempNode.getNext()!=null) {
-			if(tempNode.getKey().equals(key))
+		while (tempNode.getNext() != null) {
+			if (tempNode.getKey().equals(key))
 				break;
 			tempNode = tempNode.getNext();
 			index++;
 		}
 		return index;
 	}
+
+	// Method to add element after a given key
+	public void insertAfterKey(K key1, K key2) {
+		insert(search(key1)+1, key2);
+	}
+
 	// Method to print linked list
 	public void printLinkedList() {
 		System.out.println("Linked List");
