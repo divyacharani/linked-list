@@ -19,7 +19,8 @@ public class LinedListMain {
 		myLinkedList.printLinkedList();
 		System.out.println();
 		
-		System.out.println(myLinkedList.pop()+" deleted");
+		int element = myLinkedList.popLast();
+		System.out.println(element+" deleted");
 		
 		//Linked list after deletion
 		myLinkedList.printLinkedList();

@@ -77,6 +77,20 @@ public class LinkedList<K> {
 		return tempNode.getKey();
 	}
 
+	// Method to delete last element
+	public K popLast() {
+		K element=null;
+		Node<K> tempNode = head;
+		while (tempNode.getNext().getNext()!=null) {
+			tempNode = tempNode.getNext();
+			element = tempNode.getNext().getKey();
+		}
+		tail = tempNode;		
+		tempNode.setNext(null);
+		return element;
+
+	}
+
 	// Method to print linked list
 	public void printLinkedList() {
 		System.out.println("Linked List");
