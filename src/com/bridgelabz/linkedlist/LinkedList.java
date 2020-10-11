@@ -40,6 +40,36 @@ public class LinkedList<K> {
 		}
 	}
 
+	// Method to insert element at the givin index
+	public void insert(int index, K key) {
+		if (index == 0) {
+			addFirst(key);
+		} else if (index == getLength()) {
+			append(key);
+		} else if (index > getLength()) {
+			System.out.println("Index is out of bound");
+		} else if (index < getLength()) {
+			Node<K> newNode = new Node<K>(key);
+			Node<K> tempNode = head;
+			for (int i = 0; i <= index - 2; i++) {
+				tempNode = tempNode.getNext();
+			}
+			newNode.setNext(tempNode.getNext());
+			tempNode.setNext(newNode);
+		}
+	}
+
+	// Method to get length of linked list
+	public int getLength() {
+		int length = 0;
+		Node<K> node = head;
+		while (node.getNext() != null) {
+			length++;
+			node = node.getNext();
+		}
+		return length + 1;
+	}
+
 	// Method to print linked list
 	public void printLinkedList() {
 		System.out.println("Linked List");

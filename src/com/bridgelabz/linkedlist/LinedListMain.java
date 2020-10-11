@@ -7,13 +7,15 @@ public class LinedListMain {
 		// Welcome message
 		System.out.println("Welcome to linked list program");
 		LinkedList<Integer> myLinkedList = new LinkedList<Integer>();
-		
-		//To append elements
+
+		// To append elements
 		myLinkedList.append(56);
-		myLinkedList.append(30);
 		myLinkedList.append(70);
-		
-		//To print the linked list
+
+		// To insert between 56 and 70
+		myLinkedList.insert(1, 30);
+
+		// To print the linked list
 		myLinkedList.printLinkedList();
 
 	}
