@@ -2,7 +2,7 @@ package com.bridgelabz.linkedlist;
 
 public class Node<K> {
 	private K key;
-	private Node next;
+	private Node<K> next;
 
 	// Constructor
 	public Node(K key) {
@@ -10,11 +10,21 @@ public class Node<K> {
 		this.next = null;
 	}
 
-	public Node getNext() {
+	// Setters and getters
+	public K getKey() {
+		return key;
+	}
+
+	public void setKey(K key) {
+		this.key = key;
+	}
+
+	public Node<K> getNext() {
 		return next;
 	}
 
-	public void setNext(Node next) {
+	public void setNext(Node<K> next) {
 		this.next = next;
 	}
+
 }
