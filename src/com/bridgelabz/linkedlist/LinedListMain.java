@@ -14,16 +14,15 @@ public class LinedListMain {
 		myLinkedList.append(40);
 		myLinkedList.append(70);
 
-		//Linked list
+		//Linked list before sorting
 		myLinkedList.printLinkedList();
-		System.out.println("Size before deletion is "+myLinkedList.getLength());
 
-		//To delete 40 when key 30 is given
-		myLinkedList.deleteKey(40);
+		//To sort the list
+		myLinkedList.sortList();
 		System.out.println();
-		System.out.println("Size after deletion is "+myLinkedList.getLength());
-		System.out.println("After deletion");
+		System.out.println("List after sorting");
 		myLinkedList.printLinkedList();
+		
 		
 		
 	}

@@ -136,6 +136,32 @@ public class LinkedList<K> {
 		return element;
 	}
 
+	//Method to find maximum between two keys
+	public <K extends Comparable<K>> boolean isgreater(K key1, K key2){
+		if(key2.compareTo(key1)>0)
+			return false;
+		return true;
+	}
+	
+	//Method to sort list
+	public <K extends Comparable<K>> void sortList() {
+		Node<K> tempNode = (Node<K>) head;
+		Node<K> currentNode = null;
+		K tempKey;
+		while(tempNode!=null) {
+			currentNode = tempNode.getNext();
+			while(currentNode!=null) {
+				if(isgreater(tempNode.getKey(),currentNode.getKey())) {
+					tempKey = tempNode.getKey();
+					tempNode.setKey(currentNode.getKey());
+					currentNode.setKey(tempKey);
+					
+				}
+				currentNode = currentNode.getNext();	
+			}
+			tempNode = tempNode.getNext();
+		}
+	}
 	// Method to print linked list
 	public void printLinkedList() {
 		System.out.println("Linked List");
